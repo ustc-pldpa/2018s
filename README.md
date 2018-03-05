@@ -7,12 +7,12 @@ The packages are borrowed from [CS242: Programming Languages](http://cs242.stanf
 [Course homepage](http://staff.ustc.edu.cn/~yuzhang/fopl/)
 ## Guides
 - [Lua Setup](lua-setup.md)
-## Assignments
-- Assignment 1: RPC Library (Lua, scope)
-- Assignment 2: Roguelike (Lua, object systems)
-- Assignment 3: Type system (ML)
-- Assignment 4: Logic Engine (Lua and ML)
-- Assignment 5: SparkLite (Rust)
+## Programming Assignments (PAs)
+- [PA1](assign1/README.md): RPC Library - Serialization (Lua, scope)
+- PA2: Roguelike (Lua, object systems)
+- PA3: Type system (ML)
+- PA4: Logic Engine (Lua and ML)
+- PA5: SparkLite (Rust)
 ## Final Project
 
 
