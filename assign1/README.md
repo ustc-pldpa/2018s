@@ -10,7 +10,7 @@
 
 <!-- /TOC -->
 
-<!-- **Due: Tuesday, March 13, 2018 at 10:30pm** -->
+<!-- **Due: Tuesday, March 13??, 2018 at 10:30pm** -->
 ## Overview
 
 Serialization, or the conversion of data into bytestreams and back, is an
@@ -49,15 +49,36 @@ You must implement the three parts of the RPC library in [`starter/rpc.lua`](sta
 * `mod.deserialize`
 * `mod.rpcify`
 
+Answer the following questions in a file 'answer.md':
+
+1. 在 [`lua.lua`](../code/lua.lua#L298)
+文件的最后一个 Exercise 里, `fib[n]` 的时间复杂度如何? 如何改进? 请给出时间复杂
+度为 O(n) 的算法(用 Lua 写), 要求仍能够以 `fib[n]` 的形式调用.
+
+2. 在 [Part 1, Serialization](#part-1-serialization), 你可能会试图写类似如下的代码
+
+``` lua
+str = ""
+for k, v in pairs(t) do
+  str = str .. k .. v
+end
+```
+
+请问这样的代码存在什么问题（分析时间复杂度)? 如何改进?
+
+
+3. 在 [Part 2: RPC](#part-2-rpc), 你需要实现 `inst.k_async()` 函数, 虽然函数名字里有 async (异步), 但仍然是阻塞式的调用. 如果要改成非阻塞式, 应该怎么做?
+
+
 ## Submitting
 
 We created a personal git repository for you to submit your code. Clone your git repo by following the instructions on [our course
 website](http://staff.ustc.edu.cn/%7Eyuzhang/fopl/). **This git server can only be accessed on campus network.**
 
-When you finish your PA1, copy the file `rpc.lua` into the git repo under a
+When you finish your PA1, copy `rpc.lua` and `answer.md` into the git repo under a
 folder named `assign1`.
 
-Then `git add assign1/rpc.lua` , `git commit`, `git push origin`.
+Then `git add assign1/{rpc.lua, answer.md}` , `git commit`, `git push origin`.
 
 ## Part 1: Serialization
 
