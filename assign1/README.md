@@ -51,9 +51,10 @@ You must implement the three parts of the RPC library in [`starter/rpc.lua`](sta
 
 Answer the following questions in a file 'answer.md':
 
-1. 在 [`lua.lua`](../code/lua.lua#L298)
-文件的最后一个 Exercise 里, `fib[n]` 的时间复杂度如何? 如何改进? 请给出时间复杂
-度为 O(n) 的算法(用 Lua 写), 要求仍能够以 `fib[n]` 的形式调用.
+1. 结合对 [`lua.lua`](../code/lua.lua) 和 [`lua-repl.lua`](../code/lua-repl.lua) 的理解和运行，回答问题
+  - 在 REPL 环境下运行 [`lua.lua`](../code/lua.lua) 会面临哪些问题？
+  - [`lua.lua`](../code/lua.lua) 中使用了哪些你不熟悉的语言特性（列举 2 个），结合代码及其执行说明你的理解。
+  - 在 [`lua.lua`](../code/lua.lua#L298) 的Exercise 里, `fib[n]` 的时间复杂度如何? 如何改进? 请给出时间复杂度为 O(n) 的算法(用 Lua 写), 要求仍能够以 `fib[n]` 的形式调用.
 
 2. 在 [Part 1, Serialization](#part-1-serialization), 你可能会试图写类似如下的代码
 
