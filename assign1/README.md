@@ -1,12 +1,18 @@
 # PA1: RPC Library - Serialization
 
 <!-- TOC -->
-- [Overview](#overview)
-- [Setup](#setup)
-- [Requirements](#requirements)
-- [Submitting](#submitting)
-- [Part 1: Serialization](#part-1-serialization)
-- [Part 2: RPC](#part-2-rpc)
+
+- [PA1: RPC Library - Serialization](#pa1-rpc-library---serialization)
+    - [Overview](#overview)
+    - [Setup](#setup)
+    - [Requirements](#requirements)
+    - [Submitting](#submitting)
+    - [Part 1: Serialization](#part-1-serialization)
+    - [Part 2: RPC](#part-2-rpc)
+        - [Specification](#specification)
+        - [Foundations](#foundations)
+        - [Getting started](#getting-started)
+        - [Testing](#testing)
 
 <!-- /TOC -->
 
@@ -176,6 +182,14 @@ Here, a "class" is essentially just a table with function values. We will
 discuss a more refined notion of classes next Monday, but this is our
 definition for now.
 
+Here is an illustration of a subset of the above process.
+
+![](./rpc-example.png)
+
+
+
+### Specification
+
 On a high level, the way an RPC-ified class should work is that invoking
 `new()` forks off a new Lua process (child) which runs independently of the
 original (parent). The parent invokes methods on the child by passing
@@ -195,14 +209,16 @@ More formally:
   * `NewClass` has a function `new` that forks off a child process and returns
     a local handle `inst` (a proxy) to the child.
 
-  * For each key `k` in `Class`, `inst` contains two keys `inst.k()` and
-    `inst.k_async()` that invoke the method `k` on the child process. In the
-    synchronous case, `inst.k()` will block until the process returns a result.
-    In the asynchronous case, `inst.k_async()` will return a function that takes
-    no arguments, and when called will block until the method `k` returns.
+  * For each key k in Class, NewClass contains two keys `NewClass.k(inst, ...)`
+  and `NewClass.k_async(inst, ...)` that invoke the method `k` on the child
+  process. In the synchronous case, `NewClass.k(inst, ...)` will block until
+  the process returns a result. In the asynchronous case,
+  `NewClass.k_async(inst, ...)` will return a function that takes no arguments,
+  and when called will block until the method `k` returns.
 
-  * `inst` contains a method `inst.exit()` that, when called, will signal the
-    child process to exit and `posix.wait(...)` on the child until it dies.
+  * `NewClass` contains a method `NewClass.exit(inst)` that, when called, will
+  signal the child process to exit and `posix.wait(...)` on the child until it
+  dies.
 
   * For simplicity, your implementation may assume that a given instance will
     never have more than one call, synchronous or asynchronous, active to it from
@@ -210,9 +226,13 @@ More formally:
     the parent calling two functions asynchronously and then retrieving both
     results.
 
+### Foundations
 
-To accomplish this, you'll need to understand two core operating system
-utilities:
+To achieve the above specification, we will need a way to create new Lua
+processes and communicate between them. This involves two core utilities
+provided by your operating system, wrapped in the
+[`luaposix`](https://github.com/luaposix/luaposix) library:
+
 
 1. **fork**: invoking this function causes a new child process to fork off of
   the existing one, copying the entire contents of memory from the parent into
@@ -238,6 +258,10 @@ utilities:
     they both have access to the pre-fork environment. This mechanism will
     allow your RPC-ified `new` function to create a new process and share
     values like a pipe (below) between them.
+
+    > Note: when the child process is done with its computations, you should
+    call os.exit() to make sure that no other code is executed from the child
+    process.
 
 2. **Pipes**: pipes allow data to pass between OS processes. They have a POSIX
   implementation, but we've abstracted that away from you into a `util.Pipe`
@@ -286,6 +310,59 @@ can explicitly turn it into a list by wrapping it with a table (`{...}`). You
 can turn a table back into an argument list by using the built-in
 `table.unpack` function as shown above. ( `unpack` in Lua 5.2 was moved to
 `table.unpack` in Lua 5.3)
+
+### Getting started
+
+If you don’t have any ideas on how to get started after reading the documentation above, here’s a recommended exercise to understand the core RPC ideas of this section.
+
+``` lua
+local util = require("common.util")
+local posix = require("posix")
+local Pipe = util.Pipe
+
+local in_pipe = Pipe.new()
+local out_pipe = Pipe.new()
+
+function child()
+  local t = {
+    counter = 0,
+    incr = function(self)
+      self.counter = self.counter + 1
+    end,
+    value = function(self)
+      return self.counter
+    end
+  }
+
+  -- TODO: What to do in the child? Fill this in yourself.
+end
+
+function parent(pid)
+  Pipe.write(in_pipe, "incr")
+  Pipe.read(out_pipe) -- return is nil, don't care
+
+  Pipe.write(in_pipe, "value")
+  print(Pipe.read(out_pipe)) -- should be 1
+
+  Pipe.write(in_pipe, "exit") -- child should exit now
+  posix.wait(pid)
+end
+
+local pid = posix.fork()
+if pid == 0 then
+  child()
+else
+  parent(pid)
+end
+```
+
+Read through the code to understand what it’s trying to do --- we want to send
+commands to a table over a pipe and read results on another pipe. Think about
+how you would implement the `child` function in this case. Once you’ve done
+that, you’ll want to think about how to make this solution *generic* over any
+kind of input class (or any such table `t`).
+
+### Testing
 
 To test your code, it's the same as before: run `lua common/tests.lua`. Look
 for the `rpc_tests` function.
