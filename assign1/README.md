@@ -2,21 +2,20 @@
 
 <!-- TOC -->
 
-- [PA1: RPC Library - Serialization](#pa1-rpc-library---serialization)
-    - [Overview](#overview)
-    - [Setup](#setup)
-    - [Requirements](#requirements)
-    - [Submitting](#submitting)
-    - [Part 1: Serialization](#part-1-serialization)
-    - [Part 2: RPC](#part-2-rpc)
-        - [Specification](#specification)
-        - [Foundations](#foundations)
-        - [Getting started](#getting-started)
-        - [Testing](#testing)
+- [Overview](#overview)
+- [Setup](#setup)
+- [Requirements](#requirements)
+- [Submitting](#submitting)
+- [Part 1: Serialization](#part-1-serialization)
+- [Part 2: RPC](#part-2-rpc)
+  - [Specification](#specification)
+  - [Foundations](#foundations)
+  - [Getting started](#getting-started)
+  - [Testing](#testing)
 
 <!-- /TOC -->
 
-<!-- **Due: Tuesday, March 13??, 2018 at 10:30pm** -->
+<!-- **Due: Tuesday, March 18, 2018 at 10:00pm** -->
 ## Overview
 
 Serialization, or the conversion of data into bytestreams and back, is an
