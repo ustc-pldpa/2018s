@@ -342,10 +342,11 @@ Note that although a similar mechanism could theoretically work for metamethods,
 
 ## Part 2: Roguelike
 
-![]()
+![](./roguelike.png)
 
 To provide more thorough testing for your class library and provide you a chance to use it in practice, we have built most of a [roguelike](https://en.wikipedia.org/wiki/Roguelike) text-based game for you.
-This game consists of wandering around a dungeon and running into monsters until they are vanquished. We have distributed a reference solution for the game so you can try it out:
+This game consists of wandering around a dungeon and running into monsters until they are vanquished. <del>We have distributed a reference solution for the game so you can try it out:</del> 
+The `solution.bin` maybe not usable. Lua's bytecode is not portable. (What's the point of providing this file?)
 
 ``` bash
 lua solution.bin
