@@ -1,0 +1,6 @@
+let {Y, y} =
+  {(int * int -> int), (0, fn (a : int) . 5)}
+  as exists Y. int * int -> int
+in
+let (h : int, _) = y in
+h

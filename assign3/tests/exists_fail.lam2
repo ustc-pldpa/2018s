@@ -1,0 +1,7 @@
+let {X, x} =
+  {int, ((fn (x:int) . x), (fn (x:X) . x))}
+  as exists X. (int -> X * X -> int)
+in
+let (make : int -> X, destroy : X -> int) = x in
+let y : X = make 3 in
+destroy y

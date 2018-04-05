@@ -1,0 +1,6 @@
+let y : int -> int =
+  (tfn X .
+    let x : X -> X = fn (x : X) . x in
+    x) [int*int]
+in
+  y 2

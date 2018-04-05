@@ -1,0 +1,1 @@
+let (x : int, _) as e : int * int = (3, 4) in e

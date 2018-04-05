@@ -1,0 +1,82 @@
+{
+    "__note": "All the __expects are just human-readable expected outcomes",
+    "assign_num": 4,
+    "tests": [
+        {
+            "name": "Arithmetic",
+            "command": "tests/arithmetic.lam2"
+        },
+        {
+            "name": "Exists1",
+            "command": "tests/exists1.lam2"
+        },
+        {
+            "name": "Exists2",
+            "command": "tests/exists2.lam2"
+        },
+        {
+            "name": "Exists Fail1",
+            "command": "tests/exists_fail.lam2"
+        },
+        {
+            "name": "Inject1",
+            "command": "tests/inject1.lam2"
+        },
+        {
+            "name": "Inject2",
+            "command": "tests/inject2.lam2"
+        },
+        {
+            "name": "Inject Fail1",
+            "command": "tests/inject_fail1.lam2"
+        },
+        {
+            "name": "Match1",
+            "command": "tests/match1.lam2"
+        },
+        {
+            "name": "Match Fail1",
+            "command": "tests/match_fail1.lam2"
+        },
+        {
+            "name": "Tuple1",
+            "command": "tests/tuple1.lam2"
+        },
+        {
+            "name": "Tuple2",
+            "command": "tests/tuple2.lam2"
+        },
+        {
+            "name": "Tuple3",
+            "command": "tests/tuple3.lam2"
+        },
+        {
+            "name": "Tuple Fail1",
+            "command": "tests/tuple_fail1.lam2"
+        },
+        {
+            "name": "Tuple Fail2",
+            "command": "tests/tuple_fail2.lam2"
+        },
+        {
+            "name": "TypeFn1",
+            "command": "tests/typefn1.lam2"
+        },
+        {
+            "name": "TypeFn2",
+            "command": "tests/typefn2.lam2"
+        },
+        {
+            "name": "TypeFn Fail1",
+            "command": "tests/typefn_fail1.lam2"
+        },
+        {
+            "name": "Unbound",
+            "command": "tests/unbound.lam2"
+        },
+        {
+            "name": "Unpack Fail1",
+            "command": "tests/unpack_fail1.lam2"
+        }
+    ]
+}

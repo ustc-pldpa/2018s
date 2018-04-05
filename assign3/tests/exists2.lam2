@@ -1,0 +1,3 @@
+let {X, x} = {int, 0} as exists X. X
+in
+  x

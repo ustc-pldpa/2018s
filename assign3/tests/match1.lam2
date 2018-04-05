@@ -1,0 +1,1 @@
+match inj(2,3)=R as int+int*int{(x:int)->0|(y:int*int)->1}

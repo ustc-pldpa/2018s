@@ -38,7 +38,7 @@ Lua functions.
 ## Setup
 
 Programming assignment1 (PA1) live at our GitHub website:
-[ustc-fopl/2018s/PA1](https://github.com/ustc-fopl/2018s/PA1).
+[ustc-fopl/2018s/assign1](https://github.com/ustc-fopl/2018s/assign1).
 
 Clone the repository to your local machine.
 
@@ -209,15 +209,15 @@ More formally:
     a local handle `inst` (a proxy) to the child.
 
   * For each key k in Class, NewClass contains two keys `NewClass.k(inst, ...)`
-  and `NewClass.k_async(inst, ...)` that invoke the method `k` on the child
-  process. In the synchronous case, `NewClass.k(inst, ...)` will block until
-  the process returns a result. In the asynchronous case,
-  `NewClass.k_async(inst, ...)` will return a function that takes no arguments,
-  and when called will block until the method `k` returns.
+    and `NewClass.k_async(inst, ...)` that invoke the method `k` on the child
+    process. In the synchronous case, `NewClass.k(inst, ...)` will block until
+    the process returns a result. In the asynchronous case,
+    `NewClass.k_async(inst, ...)` will return a function that takes no arguments,
+    and when called will block until the method `k` returns.
 
   * `NewClass` contains a method `NewClass.exit(inst)` that, when called, will
-  signal the child process to exit and `posix.wait(...)` on the child until it
-  dies.
+    signal the child process to exit and `posix.wait(...)` on the child until it
+    dies.
 
   * For simplicity, your implementation may assume that a given instance will
     never have more than one call, synchronous or asynchronous, active to it from
@@ -259,8 +259,8 @@ provided by your operating system, wrapped in the
     values like a pipe (below) between them.
 
     > Note: when the child process is done with its computations, you should
-    call os.exit() to make sure that no other code is executed from the child
-    process.
+    >   call os.exit() to make sure that no other code is executed from the child
+    >   process.
 
 2. **Pipes**: pipes allow data to pass between OS processes. They have a POSIX
   implementation, but we've abstracted that away from you into a `util.Pipe`
