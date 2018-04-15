@@ -29,11 +29,11 @@ We use [OPAM](https://opam.ocaml.org/) to manage OCaml packages and install new 
 
 ```
 opam init -y
-opam switch 4.05.1
+opam switch 4.05.0
 eval `opam config env`
 opam install core menhir utop merlin ocp-indent user-setup -y
 ```
-(之前写成 4.06.1 了, 更正为 4.05.1) 
+(之前写成 4.06.1 了, 更正为 4.05.0) 
 如果有其他环境问题, 参考 [piazza](https://piazza.com/class/jecsnyvleiq5ib?cid=38)
 
 This step will take a while!
