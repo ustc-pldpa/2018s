@@ -31,6 +31,11 @@ You must implement the translation, type checking, and interpretation stages of 
 * `interpreter.ml`
 
 
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+Answer the following questions in a file `answer.md`, (txt,doc OK): 
+
+1. 写下你本次实验中遇到的主要问题和解决对策.
+
 ## Submitting
 
 When you finish your  `assign3` , copy these three files to the git repository for upload, under a folder named `assign3`.
@@ -38,7 +43,7 @@ When you finish your  `assign3` , copy these three files to the git repository f
 Then submit.
 
 ``` bash
-git add assign3/{translator.ml, typechecker.ml, interpreter.ml}``
+git add assign3/{translator.ml, typechecker.ml, interpreter.ml, answer.md}``
 git commit
 git push origin
 ```
