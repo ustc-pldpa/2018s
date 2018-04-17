@@ -36,6 +36,17 @@ opam install core menhir utop merlin ocp-indent user-setup -y
 (之前写成 4.06.1 了, 更正为 4.05.0) 
 如果有其他环境问题, 参考 [piazza](https://piazza.com/class/jecsnyvleiq5ib?cid=38)
 
+可以指定如下安装版本：
+
+```
+opam install core=v0.9.1 menhir=20170712 utop=2.0.1 merlin=3.0.2 ocp-indent=1.6.1 user-setup=0.6
+```
+然后执行 `assign3/solution.sh` 的话, 如果你的 glibc 版本是 2.26 (执行 ldd --version 查看) 可能会出这个 bug  
+```
+   `unix_sysconf` throws `Illegal seek` when glibc-2.26 is used
+``` 
+那么安装一个旧的 glibc 或者换个 Linux.
+
 This step will take a while!
 
 ### REPL(Read-Eval-Print-Loop)
