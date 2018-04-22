@@ -242,16 +242,16 @@ function saturate(rules, current_facts):
 
 To help you with the inner loops, we have provided you a number of helper functions (extended description with examples is in the code):
 
-* `unify : env -&gt; Relation.t -&gt; Relation.t -&gt; env` - takes an existing environment and two relations, and then attempts to unify the two relations, adding new mappings to the environment if necessary.
-* `substitute : Relation.t -&gt; env -&gt; Relation.t` - applies the substitution defined by the environment to the input relation, creating the output relation.
-* `applicable_facts : Relation.Set.t -&gt; Relation.t -&gt; Relation.t list` - given an input relation set and a target relation, returns all the relations in the set that share the same name.
-* `cross_product : 'a list list -&gt; 'a list list` - returns the cross product of all the sub-lists.
+* `unify : env -> Relation.t -> Relation.t -> env` - takes an existing environment and two relations, and then attempts to unify the two relations, adding new mappings to the environment if necessary.
+* `substitute : Relation.t -> env -> Relation.t` - applies the substitution defined by the environment to the input relation, creating the output relation.
+* `applicable_facts : Relation.Set.t -> Relation.t -> Relation.t list` - given an input relation set and a target relation, returns all the relations in the set that share the same name.
+* `cross_product : 'a list list -> 'a list list` - returns the cross product of all the sub-lists.
 
 Also, note that the `Relation.Set.t` functions similarly to the `String.Set.t` we saw in the previous assignment, except that it contains `Relation.t` instead of `string`. To implement saturate, you will need to know the following functions:
 
-* `Relation.Set.of_list : Relation.t list -&gt; Relation.Set.t` - converts a list into a set.
-* `Relation.Set.union : Relation.Set.t -&gt; Relation.Set.t -&gt; Relation.Set.t` - returns the union of the two input sets.
-* `Relation.Set.equal : Relation.Set.t -&gt; Relation.Set.t -&gt;  bool` - returns true if the two sets contain the same elements, false otherwise.
+* `Relation.Set.of_list : Relation.t list -> Relation.Set.t` - converts a list into a set.
+* `Relation.Set.union : Relation.Set.t -> Relation.Set.t -> Relation.Set.t` - returns the union of the two input sets.
+* `Relation.Set.equal : Relation.Set.t -> Relation.Set.t ->  bool` - returns true if the two sets contain the same elements, false otherwise.
 
 Lastly, each type (`Term.t`, `Relation.t`, `Rule.t`, `Program.t`) comes with a `to_string` function, e.g. `Relation.to_string` that you can use to inspect the state of your program at any point in time via `Printf.printf`.
 
