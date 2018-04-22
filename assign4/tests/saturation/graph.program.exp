@@ -1,0 +1,49 @@
+edge(a, b).
+edge(a, d).
+edge(a, e).
+edge(b, a).
+edge(b, c).
+edge(b, e).
+edge(c, b).
+edge(c, d).
+edge(d, a).
+edge(d, c).
+edge(e, a).
+edge(e, b).
+edge(f, g).
+edge(g, f).
+reachable(a, a).
+reachable(a, b).
+reachable(a, c).
+reachable(a, d).
+reachable(a, e).
+reachable(b, a).
+reachable(b, b).
+reachable(b, c).
+reachable(b, d).
+reachable(b, e).
+reachable(c, a).
+reachable(c, b).
+reachable(c, c).
+reachable(c, d).
+reachable(c, e).
+reachable(d, a).
+reachable(d, b).
+reachable(d, c).
+reachable(d, d).
+reachable(d, e).
+reachable(e, a).
+reachable(e, b).
+reachable(e, c).
+reachable(e, d).
+reachable(e, e).
+reachable(f, f).
+reachable(f, g).
+reachable(g, f).
+reachable(g, g).
+triangle(a, b, e).
+triangle(a, e, b).
+triangle(b, a, e).
+triangle(b, e, a).
+triangle(e, a, b).
+triangle(e, b, a).

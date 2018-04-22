@@ -1,0 +1,8 @@
+((((head ((pred grandparent) (terms ((Var X) (Var Y)))))
+   (body
+    (((pred parent) (terms ((Var X) (Var Z))))
+     ((pred parent) (terms ((Var Z) (Var Y))))))))
+ (((pred parent) (terms ((Symbol bob) (Symbol tom))))
+  ((pred parent) (terms ((Symbol mary) (Symbol tom))))
+  ((pred parent) (terms ((Symbol jim) (Symbol bob))))
+  ((pred parent) (terms ((Symbol sally) (Symbol mary))))))

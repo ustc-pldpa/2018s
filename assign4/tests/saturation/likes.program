@@ -1,0 +1,6 @@
+((((head ((pred likes) (terms ((Var A) (Var C)))))
+   (body
+    (((pred likes) (terms ((Var A) (Var B))))
+     ((pred likes) (terms ((Var B) (Var C))))))))
+ (((pred likes) (terms ((Symbol will) (Symbol mary))))
+  ((pred likes) (terms ((Symbol mary) (Symbol mishi))))))

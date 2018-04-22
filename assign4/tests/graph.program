@@ -1,0 +1,31 @@
+(
+ (
+  ((head ((pred edge) (terms ((Var X) (Var Y)))))
+  (body
+   (((pred edge) (terms ((Var Y) (Var X)))))))
+
+  ((head ((pred triangle) (terms ((Var X) (Var Y) (Var Z)))))
+    (body
+     (((pred edge) (terms ((Var X) (Var Y))))
+      ((pred edge) (terms ((Var Y) (Var Z))))
+      ((pred edge) (terms ((Var Z) (Var X))))
+     )))
+
+  ((head ((pred reachable) (terms ((Var X) (Var Y)))))
+  (body
+   (((pred edge) (terms ((Var X) (Var Y)))))))
+
+  ((head ((pred reachable) (terms ((Var X) (Var Y)))))
+   (body
+    (((pred reachable) (terms ((Var X) (Var Z))))
+     ((pred reachable) (terms ((Var Z) (Var Y)))))))
+ )
+ (((pred edge) (terms ((Symbol a) (Symbol b))))
+  ((pred edge) (terms ((Symbol b) (Symbol c))))
+  ((pred edge) (terms ((Symbol c) (Symbol d))))
+  ((pred edge) (terms ((Symbol d) (Symbol a))))
+  ((pred edge) (terms ((Symbol a) (Symbol e))))
+  ((pred edge) (terms ((Symbol e) (Symbol b))))
+  ((pred edge) (terms ((Symbol f) (Symbol g))))
+  )
+)

@@ -1,0 +1,6 @@
+grandparent(jim, tom).
+grandparent(sally, tom).
+parent(bob, tom).
+parent(jim, bob).
+parent(mary, tom).
+parent(sally, mary).

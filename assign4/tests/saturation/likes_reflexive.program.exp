@@ -1,0 +1,9 @@
+likes(mary, mary).
+likes(mary, mishi).
+likes(mary, will).
+likes(mishi, mary).
+likes(mishi, mishi).
+likes(mishi, will).
+likes(will, mary).
+likes(will, mishi).
+likes(will, will).
