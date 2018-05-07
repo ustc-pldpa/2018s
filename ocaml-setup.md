@@ -1,7 +1,7 @@
 
 # OCaml setup
 
-This guide demonstrates how to install/setup Lua and its related programs for your development environment. Only follow this guide for local installation to either OS X, Ubuntu 16.04, or Bash on Ubuntu on Windows.
+This guide demonstrates how to install/setup OCaml and its related programs for your development environment. Only follow this guide for local installation to either OS X, Ubuntu 16.04, or Bash on Ubuntu on Windows.
 
 ## 1. Install the binaries
 

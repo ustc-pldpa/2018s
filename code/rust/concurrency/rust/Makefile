@@ -1,0 +1,2 @@
+%.out: %.rs
+	rustc $^ -o $@
