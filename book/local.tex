@@ -1,0 +1,129 @@
+\usepackage{stmaryrd}            % more math symbols
+\usepackage{amsmath}             % ams math
+\usepackage{amsfonts}            % ams fonts
+\usepackage{amssymb}             % amsmath
+\usepackage{amsthm}              % theorem environment
+\newtheorem{theorem}{{定理}}[chapter]
+\newtheorem{lemma}{{引理}}[chapter]
+\newtheorem{corollary}{{推论}}[chapter]
+\newtheorem{definition}{{定义}}[chapter]
+
+
+
+\usepackage{mathrsfs}            % mathrsfs
+\usepackage[final]{listings}     %
+\usepackage[bookmarks,colorlinks]{hyperref}
+\usepackage{booktabs} % table
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, top=26mm, bottom=18mm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Latin
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\etal{\emph{et al.}}
+\newcommand\eg{\emph{e.g.,\ }}
+\newcommand\ie{\emph{i.e.,\ }}
+\newcommand\etc{\emph{etc.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Machine Syntax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Comm}[1]{\mbox{\textit{#1}}}
+\newcommand{\Insn}[1]{\mdsf{#1}}
+\newcommand{\Reg}[1]{\mathtt{#1}}
+\newcommand\Prog[0]{{\mathbb{P}}}
+\newcommand\Mem[0]{{\mathbb{M}}}
+\newcommand\Smem[0]{\mathbb{M}_{s}}
+\newcommand\Wmem[0]{\mathbb{M}_{w}}
+\newcommand\Wmk[1]{\MEM_{w#1}}
+\newcommand\Rmk[1]{\MEM_{r#1}}
+\newcommand\Heap[0]{{\mathbb{H}}}
+\newcommand\Rheap[0]{\mathbb{H}_{r}}
+\newcommand\Wheap[0]{\mathbb{H}_{w}}
+\newcommand\Regs[0]{{\mathbb{R}}}
+\newcommand\Rr[0]{\Reg{r}}
+\newcommand\Iseq[0]{{\mathbb{I}}}
+\newcommand\Code[0]{{\mathbb{C}}}
+\newcommand\Thread[0]{{\mathbb{T}}}
+\newcommand\State[0]{{\mathbb{S}}}
+\newcommand\Xstate[0]{{\mathbb{X}}}
+\newcommand\Bstate[0]{{\mathbb{B}}}
+\newcommand\Status[0]{{\mathbb{A}}}
+\newcommand\Ths[0]{\mathbb{TS}}
+\newcommand\Tid[0]{\mathtt{t}}
+
+\newcommand\Ll[0]{{\mathtt{l}}}
+\newcommand\Lf[0]{{\mathtt{f}}}
+\newcommand\Pc[0]{\mathtt{pc}}
+\newcommand\Pcinc[0]{\mathtt{pc+1}}
+\newcommand\Word[0]{{\mathtt{w}}}
+\newcommand\Value[0]{{\mathtt{v}}}
+\newcommand\Rrd[0]{\Rr_d}                        % Destination Register
+\newcommand\Rrs[0]{\Rr_s}                        % Source Register
+\newcommand\Rrt[0]{\Rr_t}                        % Secondary Source Register
+
+\newcommand\Instr[0]{\iota}
+\newcommand{\nmm}[1]{\mbox{\choosernsize{\tiny}{\small}\uppercase{#1}}}
+\newcommand\interp[1]{[\hspace{-1pt}[#1]\hspace{-1pt}]}
+\newcommand\CAPmapsto[0]{\leadsto}
+\newcommand{\Arrow}{\!\rightarrow\!}
+\newcommand{\Parrow}{\!\rightharpoonup\!}
+\newcommand{\Drrow}{\!\leftrightarrow\!}
+\newcommand{\Land}{\land\hspace{-6.5pt}\land}
+\newcommand{\Lor}{\lor\hspace{-6.5pt}\lor}
+\newcommand{\Neg}{\neg\hspace{-4.5pt}\neg}
+\newcommand{\Larrow}{\!\Rightarrow\!}
+\newcommand{\Ldarrow}{\!\Leftrightarrow\!}
+\newcommand{\Arrowimplam}{\stackrel{\lambda}{\Rightarrow}}
+\newcommand{\Arroweqv}{\Leftrightarrow}
+\newcommand{\Arrowall}{\stackrel{\forall}{\Rightarrow}}
+\newcommand{\Fog}[2]{#1\circ#2}
+\newcommand{\Equiv}{\!\triangleq\!}
+\newcommand{\Judge}[2]{#1\vdash#2}
+\newcommand{\Indu}[2]{#1^{#2}}
+\newcommand{\Wand}{\!-\!\!*\,}
+\newcommand{\Disd}{\!\perp\!}
+\newcommand{\Disu}{\!\uplus\!}
+\newcommand{\Oftype}[2]{#1\!:\!#2}
+
+\newcommand\NS[0]{\kw{Next}_{(\Pc,\iota)}}
+\newcommand\NEXTS[1]{\NS(#1)}
+\newcommand\NEXTPC[1]{\kw{Next}_{\kw{pc}}(#1)}
+\newcommand\NPC[0]{\kw{Npc}_{(\Pc,\iota)}}
+
+\newcommand\K[0]{\CAPfont{k}}
+\newcommand\ONETON{\{1,\ldots, n\}}
+
+\newcommand\step[0]{\longmapsto}
+\newcommand\tstep[1]{\stackrel{#1}\step}
+
+\newcommand\Cspec[0]{\psi}
+\newcommand\Pspec[0]{\phi}
+\newcommand\Inv[0]{\kw{INV}}
+
+\newcommand\ASST[0]{\mathtt{a}}
+\newcommand\Pred[0]{\mathtt{p}}
+\newcommand\Post[0]{\mathtt{q}}
+\newcommand\Guar[0]{\mathtt{g}}
+\newcommand\MPred[0]{\mathtt{m}}
+\newcommand\WMPred[0]{\ASST_{w}}
+\newcommand\RMPred[0]{\ASST_{r}}
+\newcommand\WP[1]{\ASST_{w#1}}
+\newcommand\RP[1]{\ASST_{r#1}}
+
+\newcommand\DEFEQ{\stackrel{\mathrm{def}}{=}}
+\newcommand\empH[0]{\kw{emp}}
+\newcommand\PrecPred[1]{\kw{Precise}(#1)}
+
+\newcommand\Domain[1]{\kw{dom}({#1})}
+\newcommand\RLKPred[1]{\kw{rlk}~\LOCK~#1}
+\newcommand\URLKPred[1]{\kw{unrlk}~\LOCK~#1}
+\newcommand\WLKPred[1]{\kw{wlk}~\LOCK~#1}
+\newcommand\UWLKPred[1]{\kw{unwlk}~\LOCK~#1}
+
+\newcommand\septrac[0]{-\!\!\!\circledast\;}%septraction
+\newcommand\mwand[0]{-\!\!\!*\;}
+\newcommand\MPredI[1]{\ASST_{\LOCKSPEC}^{#1}}
+\newcommand\enable[1]{\kw{En}~(#1)}

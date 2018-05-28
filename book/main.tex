@@ -1,0 +1,158 @@
+
+\documentclass{ctexbook}
+
+\ctexset{
+chapter/format  += \raggedright,
+section/format  += \raggedright,
+}
+
+\usepackage{bcprules}
+\input{local}
+
+\title{FPFL}
+\begin{document}
+
+\chapter{翻译须知}
+
+\section{正文}
+
+\textbf{标点符号}
+
+译稿中的标点符号要遵循中文表达习惯和中文标点符号的使用习惯，不能照搬原文的标点符号。
+
+使用中文标点，对比中文英文括号：
+\begin{itemize}
+    \item (英文)():!?,.
+    \item （中文）（）：！？，。
+\end{itemize}
+
+\textbf{字体}
+
+\vspace{4mm}
+\begin{tabular}{ll}
+    \toprule
+    pdf                          &  latex code                         \\
+    \midrule
+    正文为宋体                   &  \verb!正文为宋体!                  \\
+    \textit{英文斜体对应楷体}    &  \verb!\textit{英文斜体对应楷体}!   \\
+    \textbf{加粗对应黑体}        &  \verb!\textbf{加粗对应黑体}!       \\
+    \texttt{等宽字体对应仿宋}    &  \verb!\texttt{等宽字体对应仿宋}!   \\
+    \bottomrule
+\end{tabular}
+\vspace{4mm}
+
+关于英文术语的表述。英文术语首次出现时，应该根据该术语的流行情况，优先使用简写形式，
+并在其后使用括号加英文、中文全称注解，格式为（举例）：HTML（Hypertext
+Markup Language，超文本标识语言）。
+然后在下文中直接使用简写形式。当然，必要时也可以根据语境使用中、英文全称。
+
+\paragraph{参考}
+
+\begin{itemize}
+\item \href{http://www.cmpbook.com/index.php?id=131}{机械工业出版社作译者须知}.
+\item \href{http://www.ituring.com.cn/article/501527}{图灵技术图书译者须知}.
+\end{itemize}
+
+\section{数学}
+
+更多使用的教程参考 \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{\LaTeX/Mathematics wiki}
+
+\subsection{公式编号}
+
+行内数学环境： $a + b$ , \verb!$a + b$! 或者 \verb!\(a + b\)!。
+
+多行数学环境使用 \verb!$$a + b$$!，  \verb!\[a + b\]!。
+$$a + b$$
+
+有编号的公式:
+
+\begin{equation}\label{euqation:one_plus_one}
+    1 + 1 = \lambda f . \lambda x . f\, x
+\end{equation}
+
+
+子编号:
+\begin{subequations}
+    \begin{eqnarray}
+        a = b \\
+        c = d
+    \end{eqnarray}
+\end{subequations}
+
+如果不需要编号，在环境名后面加上星号即可： \verb!\begin{equation*} \end{equation*}!
+
+\subsection{字体}
+
+数学字体
+
+\begin{tabular}{ll}
+$\mathrm{JABCDEabcde1234}$      &  \verb!$\mathrm{JABCDEabcde1234}$!     \\
+$\mathit{JABCDEabcde1234}$      &  \verb!$\mathit{JABCDEabcde1234}$!     \\
+$\mathsf{JABCDEabcde1234}$      &  \verb!$\mathsf{JABCDEabcde1234}$!     \\
+$\mathtt{JABCDEabcde1234}$      &  \verb!$\mathtt{JABCDEabcde1234}$!     \\
+$\mathnormal{JABCDEabcde1234}$  &  \verb!$\mathnormal{JABCDEabcde1234}$! \\
+$\mathcal{JABCDEabcde1234}$     &  \verb!$\mathcal{JABCDEabcde1234}$!    \\
+$\mathscr{JABCDEabcde1234}$     &  \verb!$\mathscr{JABCDEabcde1234}$!    \\
+$\mathfrak{JABCDEabcde1234}$    &  \verb!$\mathfrak{JABCDEabcde1234}$!   \\
+$\mathbb{JABCDEabcde1234}$      &  \verb!$\mathbb{JABCDEabcde1234}$!     \\
+\end{tabular}
+
+如果在数学环境的中途需要使用文字, 使用 \verb!\text{}!.
+
+\subsection{定理与证明}
+
+\begin{theorem}[稳定性]\label{theorem:stability}
+ 如果 $\Gamma \vdash_{\mathcal{R}} J$ 则 $\Gamma \vdash_{\mathcal{R} \cup \mathcal{R}'} J$
+\end{theorem}
+
+（找不到原书使用的 J 是是什么字体, 可能是 J 去掉了前面的勾）
+
+在 \texttt{local.tex} 中定义了定理（\texttt{theorem}）、引理（\texttt{lemma}）、
+推论（\texttt{corollary}）、定义（\texttt{definition}）的环境。请使用这些环境。
+
+
+证明需要使用 \texttt{proof} 环境，在证明结束后会有一个方框。
+\begin{proof}
+    显然。
+\end{proof}
+
+
+\subsection{宏}
+
+\LaTeX 可以使用 \verb!\newcommand\commandname{commandbody}! 来定义新的命令。
+如果 commandname 已经被定义，使用 \verb!renewcommand! 覆盖原有定义。
+
+\texttt{local.tex} 文件中定义了一些宏。
+
+\begin{verbatim}
+\newcommand{\Comm}[1]{\mbox{\textit{#1}}}
+\end{verbatim}
+
+\texttt{[1]} 表示接受一个参数， \texttt{\#1}用来引用这个参数. 参数通过 \texttt{\{\}} 传递。
+
+例如： $\Comm{add}$  $\qquad$ \vspace{1cm} \verb!$\Comm{add}$!
+
+可以在文中随时定义新的宏，在使用后删除宏，避免污染环境。
+
+\newcommand{\aaaa}{aaaa}
+\aaaa
+\let\aaaa\undefined
+
+在 \texttt{bcprules.sty} 文件中定义了用于排版 inference rules 的宏。
+
+
+\section{引用}
+
+在需要引用的公式，章节，定理后面加上 \verb!\label{label_name}!， 使用 \verb!\ref{label_name}!
+引用。名字最好有意义。涉及章节的引用先空着，用注释说明。
+
+定理\ref{theorem:stability}, 公式 \ref{euqation:one_plus_one}。
+
+
+\section{索引}
+
+暂时不用考虑。
+
+
+
+\end{document}
